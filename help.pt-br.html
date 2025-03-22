@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hold 'em Help</title>
+    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="static/css/poker.css" type="text/css">
+    <link rel="shortcut icon" href="static/images/chip5.png" />
+    <style>
+        body {
+            background-color: #F9F5E9;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 30px 0;
+        }
+
+        .section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 1.2em;
+            text-align: justify;
+        }
+
+        b {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background-color: #ffd70033;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .example {
+            font-size: 13px;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .poker-table {
+                font-size: 12px;
+            }
+
+            .poker-table th,
+            .poker-table td {
+                padding: 6px 8px;
+            }
+
+            .example {
+                font-size: 11px;
+            }
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .hand-list {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .hand-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hand-name {
+            font-weight: bold;
+            width: 150px;
+        }
+
+        .hand-description {
+            color: #666;
+            font-size: 0.9em;
+            width: 250px;
+        }
+
+        .hand-example {
+            display: flex;
+            gap: 5px;
+        }
+
+        .card {
+            width: 40px;
+            height: 55px;
+            border: 1px solid #000;
+            border-radius: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            font-weight: bold;
+        }
+
+        .spades,
+        .clubs {
+            color: black;
+        }
+
+        .hearts,
+        .diamonds {
+            color: red;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .language-switch:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<button class="language-switch" onclick="window.location.href='help.html'">EN</button>
+
+<h1>Ajuda do Hold 'em</h1>
+
+<div class="section">
+    <p>
+        Para começar o jogo, cada jogador recebe 2 cartas viradas para baixo.
+        O jogador à esquerda do dealer deve apostar metade da
+        aposta mínima imediatamente. O próximo jogador deve apostar a
+        aposta mínima. Essas apostas obrigatórias iniciais são chamadas de
+        small e big blinds.
+    </p>
+
+    <p>
+        O jogador após o segundo blind pode então escolher entre <b class="highlight">pagar</b>
+        (apostar o mínimo), <b class="highlight">aumentar</b> (apostar mais que o mínimo) ou
+        <b class="highlight">desistir</b> (não jogar esta rodada).
+    </p>
+
+    <p>
+        As apostas circulam pela mesa. Em seguida, é hora do
+        "flop". Três cartas são distribuídas viradas para cima. Estas são compartilhadas
+        entre todos os jogadores. Por exemplo, se você tiver um Rei e
+        outro Rei aparecer no flop, então você tem um par de
+        Reis.
+    </p>
+
+    <p>
+        Após o flop, há outra rodada de apostas. Em seguida, uma
+        4ª carta compartilhada é distribuída virada para cima. Depois, mais apostas.
+        Finalmente, uma 5ª carta compartilhada é distribuída, seguida por uma rodada de
+        apostas.
+    </p>
+
+    <p>
+        Qualquer jogador ainda no jogo pode então mostrar suas cartas.
+        O jogador com a melhor mão de 5 cartas é o vencedor.
+    </p>
+</div>
+
+<h2>Ordem das Mãos</h2>
+
+<div class="section">
+    <p>
+        Apenas as melhores 5 cartas jogam, mesmo que 7 estejam disponíveis para
+        cada jogador. Por exemplo, se você tiver um 4 e um 2 e o flop vier 9,9,9,4,10... você tem um full house de noves
+        sobre quatros.
+    </p>
+
+    <p>Esta é uma lista de mãos do melhor para o pior.</p>
+
+    <div class="hand-list">
+        <div class="hand-list-item">
+            <div class="hand-name">ROYAL FLUSH</div>
+            <div class="hand-description">Sequência de mesmo naipe terminando em um Ás</div>
+            <div class="hand-example">
+                <div class="card spades">A♠</div>
+                <div class="card spades">K♠</div>
+                <div class="card spades">Q♠</div>
+                <div class="card spades">J♠</div>
+                <div class="card spades">10♠</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">STRAIGHT FLUSH</div>
+            <div class="hand-description">Sequência de mesmo naipe terminando abaixo de um Ás</div>
+            <div class="hand-example">
+                <div class="card hearts">9♥</div>
+                <div class="card hearts">8♥</div>
+                <div class="card hearts">7♥</div>
+                <div class="card hearts">6♥</div>
+                <div class="card hearts">5♥</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">FOUR OF A KIND</div>
+            <div class="hand-description">Quatro cartas do mesmo valor</div>
+            <div class="hand-example">
+                <div class="card spades">3♠</div>
+                <div class="card spades">3♠</div>
+                <div class="card spades">3♠</div>
+                <div class="card spades">3♠</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">FULL HOUSE</div>
+            <div class="hand-description">Três de um valor, duas de outro</div>
+            <div class="hand-example">
+                <div class="card hearts">5♥</div>
+                <div class="card hearts">5♥</div>
+                <div class="card hearts">5♥</div>
+                <div class="card hearts">9♥</div>
+                <div class="card hearts">9♥</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">FLUSH</div>
+            <div class="hand-description">Cinco cartas do mesmo naipe</div>
+            <div class="hand-example">
+                <div class="card hearts">A♥</div>
+                <div class="card hearts">10♥</div>
+                <div class="card hearts">9♥</div>
+                <div class="card hearts">4♥</div>
+                <div class="card hearts">2♥</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">STRAIGHT</div>
+            <div class="hand-description">Cinco cartas em sequência</div>
+            <div class="hand-example">
+                <div class="card hearts">5♥</div>
+                <div class="card hearts">4♥</div>
+                <div class="card hearts">3♥</div>
+                <div class="card hearts">2♥</div>
+                <div class="card hearts">A♥</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">THREE OF A KIND</div>
+            <div class="hand-description">Três cartas do mesmo valor</div>
+            <div class="hand-example">
+                <div class="card spades">2♠</div>
+                <div class="card spades">2♠</div>
+                <div class="card spades">2♠</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">TWO PAIR</div>
+            <div class="hand-description">Dois pares de cartas do mesmo valor</div>
+            <div class="hand-example">
+                <div class="card hearts">Q♥</div>
+                <div class="card hearts">Q♥</div>
+                <div class="card hearts">5♥</div>
+                <div class="card hearts">5♥</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">ONE PAIR</div>
+            <div class="hand-description">Um par de cartas do mesmo valor</div>
+            <div class="hand-example">
+                <div class="card hearts">9♥</div>
+                <div class="card hearts">9♥</div>
+                <div class="card hearts">Q♥</div>
+                <div class="card hearts">7♥</div>
+                <div class="card hearts">2♥</div>
+            </div>
+        </div>
+
+        <div class="hand-list-item">
+            <div class="hand-name">HIGH CARD</div>
+            <div class="hand-description">Qualquer carta, a mais alta vence</div>
+            <div class="hand-example">
+                <div class="card hearts">A♥</div>
+                <div class="card hearts">J♥</div>
+                <div class="card hearts">10♥</div>
+                <div class="card hearts">9♥</div>
+                <div class="card hearts">2♥</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Como Jogar Texas Hold 'em Poker</h2>
+
+<div class="section">
+    <p>
+        Qual é a melhor maneira de ganhar muito dinheiro? Existem várias teorias sobre isso, mas parece que a
+        experiência é a melhor coisa a se ter. Mas aqui está um conselho... Jogue uma rodada apenas se realmente gostar
+        das suas 2 cartas iniciais. Por exemplo, A,K ou K,K. Aqui é onde cartas altas são melhores. Se você tiver um par
+        de 7s, pode querer considerar desistir.
+    </p>
+
+    <p>
+        Além disso, tenha cuidado com o que você aposta. Você realmente acha que tem a melhor mão? Fique atento a outras
+        possibilidades. Alguém está tentando uma Sequência? Um Flush? Poderiam ter Trinca? Um Full House??!?!!!!???.
+        Ninguém nunca tem Quadra.
+    </p>
+</div>
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,317 +9,341 @@
    <link rel="stylesheet" href="static/css/poker.css" type="text/css">
    <link rel="shortcut icon" href="static/images/chip5.png" />
    <style>
-       body {
-           background-color: #F9F5E9;
-           max-width: 800px;
-           margin: 0 auto;
-           padding: 20px;
-           font-family: Arial, sans-serif;
-           line-height: 1.6;
-       }
+      body {
+         background-color: #F9F5E9;
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 20px;
+         font-family: Arial, sans-serif;
+         line-height: 1.6;
+      }
 
-       @media (max-width: 768px) {
-           body {
-               padding: 15px;
-           }
-       }
+      @media (max-width: 768px) {
+         body {
+            padding: 15px;
+         }
+      }
 
-       h1, h2 {
-           text-align: center;
-           color: #333;
-           margin: 30px 0;
-       }
+      h1,
+      h2 {
+         text-align: center;
+         color: #333;
+         margin: 30px 0;
+      }
 
-       .section {
-           background-color: white;
-           padding: 25px;
-           border-radius: 8px;
-           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-           margin-bottom: 30px;
-       }
+      .section {
+         background-color: white;
+         padding: 25px;
+         border-radius: 8px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+         margin-bottom: 30px;
+      }
 
-       p {
-           margin-bottom: 1.2em;
-           text-align: justify;
-       }
+      p {
+         margin-bottom: 1.2em;
+         text-align: justify;
+      }
 
-       b {
-           color: #333;
-           font-weight: 600;
-       }
+      b {
+         color: #333;
+         font-weight: 600;
+      }
 
-       .highlight {
-           background-color: #ffd70033;
-           padding: 2px 5px;
-           border-radius: 3px;
-       }
+      .highlight {
+         background-color: #ffd70033;
+         padding: 2px 5px;
+         border-radius: 3px;
+      }
 
-       .example {
-           font-size: 13px;
-           color: #555;
-       }
+      .example {
+         font-size: 13px;
+         color: #555;
+      }
 
-       @media (max-width: 600px) {
-           .poker-table {
-               font-size: 12px;
-           }
-           
-           .poker-table th, .poker-table td {
-               padding: 6px 8px;
-           }
+      @media (max-width: 600px) {
+         .poker-table {
+            font-size: 12px;
+         }
 
-           .example {
-               font-size: 11px;
-           }
-       }
+         .poker-table th,
+         .poker-table td {
+            padding: 6px 8px;
+         }
 
-       .table-container {
-           overflow-x: auto;
-           margin: 20px 0;
-       }
+         .example {
+            font-size: 11px;
+         }
+      }
 
-       .hand-list {
-           width: 100%;
-           max-width: 600px;
-           margin: 20px auto;
-           font-family: Arial, sans-serif;
-       }
+      .table-container {
+         overflow-x: auto;
+         margin: 20px 0;
+      }
 
-       .hand-list-item {
-           display: flex;
-           align-items: center;
-           margin-bottom: 15px;
-           padding: 10px;
-           border-bottom: 1px solid #eee;
-       }
+      .hand-list {
+         width: 100%;
+         max-width: 600px;
+         margin: 20px auto;
+         font-family: Arial, sans-serif;
+      }
 
-       .hand-name {
-           font-weight: bold;
-           width: 150px;
-       }
+      .hand-list-item {
+         display: flex;
+         align-items: center;
+         margin-bottom: 15px;
+         padding: 10px;
+         border-bottom: 1px solid #eee;
+      }
 
-       .hand-description {
-           color: #666;
-           font-size: 0.9em;
-           width: 250px;
-       }
+      .hand-name {
+         font-weight: bold;
+         width: 150px;
+      }
 
-       .hand-example {
-           display: flex;
-           gap: 5px;
-       }
+      .hand-description {
+         color: #666;
+         font-size: 0.9em;
+         width: 250px;
+      }
 
-       .card {
-           width: 40px;
-           height: 55px;
-           border: 1px solid #000;
-           border-radius: 3px;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           background: white;
-           font-weight: bold;
-       }
+      .hand-example {
+         display: flex;
+         gap: 5px;
+      }
 
-       .spades, .clubs {
-           color: black;
-       }
+      .card {
+         width: 40px;
+         height: 55px;
+         border: 1px solid #000;
+         border-radius: 3px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: white;
+         font-weight: bold;
+      }
 
-       .hearts, .diamonds {
-           color: red;
-       }
+      .spades,
+      .clubs {
+         color: black;
+      }
+
+      .hearts,
+      .diamonds {
+         color: red;
+      }
+
+      .language-switch {
+         position: fixed;
+         top: 20px;
+         right: 20px;
+         padding: 8px 16px;
+         background-color: #333;
+         color: white;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         font-size: 14px;
+         transition: background-color 0.3s;
+      }
+
+      .language-switch:hover {
+         background-color: #555;
+      }
    </style>
 </head>
-<!-- body vlink=0000FF><pre-->
+<button class="language-switch" onclick="window.location.href='help.pt-br.html'">PT-BR</button>
+
 <h1>Basic Gameplay</h1>
 
 <div class="section">
-    <p>
-        To start the game, each player is dealt 2 cards face down.
-        The player to the left of the dealer must bet half of the
-        minimum bet immediately. The next player must bet the
-        minimum bet. These mandatory upfront bets are called the
-        small and big blinds.
-    </p>
+   <p>
+      To start the game, each player is dealt 2 cards face down.
+      The player to the left of the dealer must bet half of the
+      minimum bet immediately. The next player must bet the
+      minimum bet. These mandatory upfront bets are called the
+      small and big blinds.
+   </p>
 
-    <p>
-        The player after the second blind can then choose to <b class="highlight">call</b>
-        (bet the minimum), <b class="highlight">raise</b> (bet more than the minimum), or
-        <b class="highlight">fold</b> (not play this round).
-    </p>
+   <p>
+      The player after the second blind can then choose to <b class="highlight">call</b>
+      (bet the minimum), <b class="highlight">raise</b> (bet more than the minimum), or
+      <b class="highlight">fold</b> (not play this round).
+   </p>
 
-    <p>
-        Betting goes around the table. It is then time for the
-        "flop". Three cards are dealt face up. These are shared
-        amongst all players. For example, if you have a King and
-        another King comes up on the flop, then you have a pair of
-        Kings.
-    </p>
+   <p>
+      Betting goes around the table. It is then time for the
+      "flop". Three cards are dealt face up. These are shared
+      amongst all players. For example, if you have a King and
+      another King comes up on the flop, then you have a pair of
+      Kings.
+   </p>
 
-    <p>
-        After the flop, there's another round of betting. Then, a
-        4th shared card is dealt face up. Then more betting.
-        Finally, a 5th shared card is dealt followed by a round of
-        betting.
-    </p>
+   <p>
+      After the flop, there's another round of betting. Then, a
+      4th shared card is dealt face up. Then more betting.
+      Finally, a 5th shared card is dealt followed by a round of
+      betting.
+   </p>
 
-    <p>
-        Any players still in the game can then show their cards.
-        The player with the best 5-card hand is the winner.
-    </p>
+   <p>
+      Any players still in the game can then show their cards.
+      The player with the best 5-card hand is the winner.
+   </p>
 </div>
 
 <h2>Order of Hands</h2>
 
 <div class="section">
-    <p>
-        Only the best 5 cards play even though 7 are available to
-        each player. For example, if you hold a 4 and a 2 and then
-        the flop comes up 9,9,9,4,10...you have a full house nines
-        over fours.
-    </p>
+   <p>
+      Only the best 5 cards play even though 7 are available to
+      each player. For example, if you hold a 4 and a 2 and then
+      the flop comes up 9,9,9,4,10...you have a full house nines
+      over fours.
+   </p>
 
-    <p>This is a list of hands from best to worst.</p>
+   <p>This is a list of hands from best to worst.</p>
 
-    <div class="hand-list">
-        <div class="hand-list-item">
-            <div class="hand-name">ROYAL FLUSH</div>
-            <div class="hand-description">Straight flush ending in an Ace</div>
-            <div class="hand-example">
-                <div class="card spades">A♠</div>
-                <div class="card spades">K♠</div>
-                <div class="card spades">Q♠</div>
-                <div class="card spades">J♠</div>
-                <div class="card spades">10♠</div>
-            </div>
-        </div>
+   <div class="hand-list">
+      <div class="hand-list-item">
+         <div class="hand-name">ROYAL FLUSH</div>
+         <div class="hand-description">Straight flush ending in an Ace</div>
+         <div class="hand-example">
+            <div class="card spades">A♠</div>
+            <div class="card spades">K♠</div>
+            <div class="card spades">Q♠</div>
+            <div class="card spades">J♠</div>
+            <div class="card spades">10♠</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">STRAIGHT FLUSH</div>
-            <div class="hand-description">Straight in same suite ending lower than Ace</div>
-            <div class="hand-example">
-                <div class="card hearts">9♥</div>
-                <div class="card hearts">8♥</div>
-                <div class="card hearts">7♥</div>
-                <div class="card hearts">6♥</div>
-                <div class="card hearts">5♥</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">STRAIGHT FLUSH</div>
+         <div class="hand-description">Straight in same suite ending lower than Ace</div>
+         <div class="hand-example">
+            <div class="card hearts">9♥</div>
+            <div class="card hearts">8♥</div>
+            <div class="card hearts">7♥</div>
+            <div class="card hearts">6♥</div>
+            <div class="card hearts">5♥</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">FOUR OF A KIND</div>
-            <div class="hand-description">Four cards of the same rank</div>
-            <div class="hand-example">
-                <div class="card spades">3♠</div>
-                <div class="card spades">3♠</div>
-                <div class="card spades">3♠</div>
-                <div class="card spades">3♠</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">FOUR OF A KIND</div>
+         <div class="hand-description">Four cards of the same rank</div>
+         <div class="hand-example">
+            <div class="card spades">3♠</div>
+            <div class="card spades">3♠</div>
+            <div class="card spades">3♠</div>
+            <div class="card spades">3♠</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">FULL HOUSE</div>
-            <div class="hand-description">Three of one rank, two of another</div>
-            <div class="hand-example">
-                <div class="card hearts">5♥</div>
-                <div class="card hearts">5♥</div>
-                <div class="card hearts">5♥</div>
-                <div class="card hearts">9♥</div>
-                <div class="card hearts">9♥</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">FULL HOUSE</div>
+         <div class="hand-description">Three of one rank, two of another</div>
+         <div class="hand-example">
+            <div class="card hearts">5♥</div>
+            <div class="card hearts">5♥</div>
+            <div class="card hearts">5♥</div>
+            <div class="card hearts">9♥</div>
+            <div class="card hearts">9♥</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">FLUSH</div>
-            <div class="hand-description">Five cards of the same suit</div>
-            <div class="hand-example">
-                <div class="card hearts">A♥</div>
-                <div class="card hearts">10♥</div>
-                <div class="card hearts">9♥</div>
-                <div class="card hearts">4♥</div>
-                <div class="card hearts">2♥</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">FLUSH</div>
+         <div class="hand-description">Five cards of the same suit</div>
+         <div class="hand-example">
+            <div class="card hearts">A♥</div>
+            <div class="card hearts">10♥</div>
+            <div class="card hearts">9♥</div>
+            <div class="card hearts">4♥</div>
+            <div class="card hearts">2♥</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">STRAIGHT</div>
-            <div class="hand-description">Five cards in a row</div>
-            <div class="hand-example">
-                <div class="card hearts">5♥</div>
-                <div class="card hearts">4♥</div>
-                <div class="card hearts">3♥</div>
-                <div class="card hearts">2♥</div>
-                <div class="card hearts">A♥</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">STRAIGHT</div>
+         <div class="hand-description">Five cards in a row</div>
+         <div class="hand-example">
+            <div class="card hearts">5♥</div>
+            <div class="card hearts">4♥</div>
+            <div class="card hearts">3♥</div>
+            <div class="card hearts">2♥</div>
+            <div class="card hearts">A♥</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">THREE OF A KIND</div>
-            <div class="hand-description">Three cards of the same rank</div>
-            <div class="hand-example">
-                <div class="card spades">2♠</div>
-                <div class="card spades">2♠</div>
-                <div class="card spades">2♠</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">THREE OF A KIND</div>
+         <div class="hand-description">Three cards of the same rank</div>
+         <div class="hand-example">
+            <div class="card spades">2♠</div>
+            <div class="card spades">2♠</div>
+            <div class="card spades">2♠</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">TWO PAIR</div>
-            <div class="hand-description">Two sets of two cards of the same rank</div>
-            <div class="hand-example">
-                <div class="card hearts">Q♥</div>
-                <div class="card hearts">Q♥</div>
-                <div class="card hearts">5♥</div>
-                <div class="card hearts">5♥</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">TWO PAIR</div>
+         <div class="hand-description">Two sets of two cards of the same rank</div>
+         <div class="hand-example">
+            <div class="card hearts">Q♥</div>
+            <div class="card hearts">Q♥</div>
+            <div class="card hearts">5♥</div>
+            <div class="card hearts">5♥</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">ONE PAIR</div>
-            <div class="hand-description">One set of two cards of the same rank</div>
-            <div class="hand-example">
-                <div class="card hearts">9♥</div>
-                <div class="card hearts">9♥</div>
-                <div class="card hearts">Q♥</div>
-                <div class="card hearts">7♥</div>
-                <div class="card hearts">2♥</div>
-            </div>
-        </div>
+      <div class="hand-list-item">
+         <div class="hand-name">ONE PAIR</div>
+         <div class="hand-description">One set of two cards of the same rank</div>
+         <div class="hand-example">
+            <div class="card hearts">9♥</div>
+            <div class="card hearts">9♥</div>
+            <div class="card hearts">Q♥</div>
+            <div class="card hearts">7♥</div>
+            <div class="card hearts">2♥</div>
+         </div>
+      </div>
 
-        <div class="hand-list-item">
-            <div class="hand-name">HIGH CARD</div>
-            <div class="hand-description">Any cards, the highest wins</div>
-            <div class="hand-example">
-                <div class="card hearts">A♥</div>
-                <div class="card hearts">J♥</div>
-                <div class="card hearts">10♥</div>
-                <div class="card hearts">9♥</div>
-                <div class="card hearts">2♥</div>
-            </div>
-        </div>
-    </div>
+      <div class="hand-list-item">
+         <div class="hand-name">HIGH CARD</div>
+         <div class="hand-description">Any cards, the highest wins</div>
+         <div class="hand-example">
+            <div class="card hearts">A♥</div>
+            <div class="card hearts">J♥</div>
+            <div class="card hearts">10♥</div>
+            <div class="card hearts">9♥</div>
+            <div class="card hearts">2♥</div>
+         </div>
+      </div>
+   </div>
 </div>
 
 <h2>How to Play Texas Hold 'em Poker</h2>
 
 <div class="section">
-    <p>
-        What's the best way to make a lot of money? There are all
-        kinds of theories on this, but it seems that experience is
-        the best thing to have. But here's some advice...Only play
-        a round if you really like your starting 2 cards. For
-        example A,K or K,K. Here's where high cards are best. If
-        you hold a pair of 7s, you might want to consider folding.
-    </p>
+   <p>
+      What's the best way to make a lot of money? There are all
+      kinds of theories on this, but it seems that experience is
+      the best thing to have. But here's some advice...Only play
+      a round if you really like your starting 2 cards. For
+      example A,K or K,K. Here's where high cards are best. If
+      you hold a pair of 7s, you might want to consider folding.
+   </p>
 
-    <p>
-        Other than that, be careful what you bet. Do you really
-        think that you have the best hand? Watch out for other
-        possibilities. Is someone trying for a Straight? A Flush?
-        Could they have Three of a Kind? A Full House??!?!!!!???.
-        No one ever has Four of a Kind.
-    </p>
+   <p>
+      Other than that, be careful what you bet. Do you really
+      think that you have the best hand? Watch out for other
+      possibilities. Is someone trying for a Straight? A Flush?
+      Could they have Three of a Kind? A Full House??!?!!!!???.
+      No one ever has Four of a Kind.
+   </p>
 </div>
 
 </body>
+
 </html>
