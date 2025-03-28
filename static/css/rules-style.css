@@ -33,6 +33,10 @@ body {
     text-align: center;       /* Centraliza botões e imagem inicialmente */
 }
 
+.rules-card img:hover {
+    scale: 1.5  ; /* Efeito de zoom ao passar o mouse */
+}
+
 /* Botões de Idioma */
 #language-switcher {
     margin-bottom: 25px;
