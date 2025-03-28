@@ -156,7 +156,8 @@ class PokerGame {
     _logEvent(message) {
         console.log(message);
         this.log.push(message);
-        // if (this.log.length > 50) this.log.shift(); // Limita tamanho do log
+        
+        if (this.log.length > 200) this.log.shift(); // Limita tamanho do log
     }
 
     _triggerUIUpdate() {

@@ -29,15 +29,15 @@ body {
 #poker-table {
     width: 100%;
     max-width: 950px;
-    height: 600px; /* <<< ALTERADO: Aumenta a altura da mesa */
+    height: 350px; /* <<< ALTERADO: Aumenta a altura da mesa */
     background: radial-gradient(ellipse at center, #2a9d47 0%, #007a21 70%, #005c18 100%);
     border: 18px solid #4a2d21;
     /* Ajusta border-radius se a proporção oval parecer estranha */
     border-radius: 220px / 200px;
     position: relative;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 0 25px rgba(0,0,0,0.3);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 5rem;
+    margin-top: 4rem;
 }
 
 /* Áreas dos Jogadores - Tentativa de Pods mais arredondados */
@@ -97,27 +97,27 @@ body {
     font-weight: bold;
 }
 
-
-/* Posicionamento específico dos jogadores - Ajustado para ficar mais 'fora' */
 #player-0 { /* Humano - Bottom */
-    bottom: 1rem; /* Mais para baixo */
+    bottom: 0; /* Alinha base do pod com base da mesa */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(50%);
 }
+
 #player-1 { /* AI 1 - Left */
-    top: 50%;
-    left: 25px; /* Mais para esquerda */
-    transform: translateY(-50%) rotate(15deg); /* Leve rotação */
+    top: 50%; /* Alinha topo do pod com centro vertical da mesa */
+    transform: translateY(-50%) translateX(-50%) rotate(15deg);
 }
+
 #player-2 { /* AI 2 - Top */
-    top: 20px; /* Mais para cima */
+    top: 0; /* Alinha topo do pod com topo da mesa */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
+
 #player-3 { /* AI 3 - Right */
-    top: 50%;
-    right: 25px; /* Mais para direita */
-    transform: translateY(-50%) rotate(-15deg); /* Leve rotação */
+    top: 50%; /* Alinha topo do pod com centro vertical da mesa */
+    right: 0; /* Alinha direita do pod com direita da mesa */
+    transform: translateY(-50%) translateX(50%) rotate(-15deg);
 }
 
 /* Destaque de Turno */
@@ -178,9 +178,17 @@ body {
     z-index: 2; /* Fica em cima */
 }
 
+#player-0 .player-cards img:hover {
+    scale: 1.5;
+}
+
 /* Espaçamento das cartas comunitárias */
 #community-cards img {
     margin: 0 5px; /* Espaçamento horizontal */
+}
+
+#community-cards img:hover {
+    scale: 1.5;
 }
 
 
@@ -197,8 +205,8 @@ body {
 }
 
 #pot {
-    background-color: rgba(0, 0, 0, 0.65);
-    color: #e0e0e0;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
     padding: 6px 18px;
     border-radius: 20px;
     margin-top: 1rem;
@@ -209,7 +217,8 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 #pot span {
-    color: #ffd700; /* Dourado mantido */
+    color: #fff; /* Dourado mantido */
+    font-weight: bold;
     margin-left: 5px;
 }
 
@@ -217,7 +226,7 @@ body {
 .dealer-button {
     position: absolute;
     top: 50%;              /* Centraliza verticalmente no pod */
-    right: -28px;          /* Empurra para fora do lado direito */
+    right: -30px;          /* Empurra para fora do lado direito */
     transform: translateY(-50%); /* Ajuste fino vertical */
     width: 22px;
     height: 22px;
@@ -396,7 +405,7 @@ body {
 
 /* Log do Jogo */
 #game-log {
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 3rem;
     width: 90%;
     max-width: 850px;
