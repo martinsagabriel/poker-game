@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Rules</title>
+    <link rel="stylesheet" href="/static/css/rules-style.css">
+    <link rel="shortcut icon" href="static/images/icons/poker.csv" />
+</head>
+
+<body>
+    <div class="rules-container">
+        <div class="rules-card">
+            <!-- Botões de Idioma -->
+            <div id="language-switcher">
+                <button id="btn-en" class="active">English</button>
+                <button id="btn-pt">Português</button>
+            </div>
+
+            <!-- Conteúdo das Regras -->
+            <div id="rules-content">
+
+                <!-- Seção em Inglês -->
+                <div class="rules-text lang-en">
+                    <h1>Poker Hand Rankings & Rules</h1>
+                    <p>Texas Hold'em basics:</p>
+
+                    <!-- ===== INÍCIO DA ESTRUTURA DE RANKING DE MÃOS ===== -->
+                    <div class="hand-rankings-container">
+
+                        <!-- Royal Flush -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Royal Flush</h2>
+                                <p data-lang-en="This hand contains five cards in sequence, all of the same suit, ending in Ace."
+                                    data-lang-pt="Esta mão contém cinco cartas em sequência, todas do mesmo naipe, terminando em Ás.">
+                                    This hand contains five cards in sequence, all of the same suit, ending in Ace.
+                                    <!-- Default EN -->
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/ace_of_hearts.png" alt="Ace of Hearts">
+                                <img src="static/images/king_of_hearts.png" alt="King of Hearts">
+                                <img src="static/images/queen_of_hearts.png" alt="Queen of Hearts">
+                                <img src="static/images/jack_of_hearts.png" alt="Jack of Hearts">
+                                <img src="static/images/10_of_hearts.png" alt="10 of Hearts">
+                            </div>
+                        </div>
+
+                        <!-- Straight Flush -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Straight Flush</h2>
+                                <p data-lang-en="This hand contains five cards in sequence, all of the same suit."
+                                    data-lang-pt="Esta mão contém cinco cartas em sequência, todas do mesmo naipe.">
+                                    This hand contains five cards in sequence, all of the same suit.
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/8_of_clubs.png" alt="8 of Clubs">
+                                <img src="static/images/7_of_clubs.png" alt="7 of Clubs">
+                                <img src="static/images/6_of_clubs.png" alt="6 of Clubs">
+                                <img src="static/images/5_of_clubs.png" alt="5 of Clubs">
+                                <img src="static/images/4_of_clubs.png" alt="4 of Clubs">
+                            </div>
+                        </div>
+
+                        <!-- Four of a Kind -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Four of a Kind</h2>
+                                <p data-lang-en="This hand contains all four cards of one rank and any other unmatched card (kicker)."
+                                    data-lang-pt="Esta mão contém todas as quatro cartas de um valor e qualquer outra carta diferente (kicker).">
+                                    This hand contains all four cards of one rank and any other unmatched card (kicker).
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/5_of_diamonds.png" alt="5 of Diamonds">
+                                <img src="static/images/5_of_hearts.png" alt="5 of Hearts">
+                                <img src="static/images/5_of_clubs.png" alt="5 of Clubs">
+                                <img src="static/images/5_of_spades.png" alt="5 of Spades">
+                                <img src="static/images/3_of_hearts.png" alt="3 of Hearts">
+                            </div>
+                        </div>
+
+                        <!-- Full House -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Full House</h2>
+                                <p data-lang-en="This hand contains three matching cards of one rank and two matching cards of another rank."
+                                    data-lang-pt="Esta mão contém três cartas iguais de um valor e duas cartas iguais de outro valor.">
+                                    This hand contains three matching cards of one rank and two matching cards of
+                                    another rank.
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/king_of_hearts.png" alt="King of Hearts">
+                                <img src="static/images/king_of_diamonds.png" alt="King of Diamonds">
+                                <img src="static/images/king_of_spades.png" alt="King of Spades">
+                                <img src="static/images/5_of_hearts.png" alt="5 of Hearts">
+                                <img src="static/images/5_of_clubs.png" alt="5 of Clubs">
+                            </div>
+                        </div>
+
+                        <!-- Flush -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Flush</h2>
+                                <p data-lang-en="This hand contains all five cards of the same suit, but not in sequence."
+                                    data-lang-pt="Esta mão contém todas as cinco cartas do mesmo naipe, mas não em sequência.">
+                                    This hand contains all five cards of the same suit, but not in sequence.
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/king_of_spades.png" alt="King of Spades">
+                                <img src="static/images/jack_of_spades.png" alt="Jack of Spades">
+                                <img src="static/images/9_of_spades.png" alt="9 of Spades">
+                                <img src="static/images/7_of_spades.png" alt="7 of Spades">
+                                <img src="static/images/3_of_spades.png" alt="3 of Spades">
+                            </div>
+                        </div>
+
+                        <!-- Straight -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Straight</h2>
+                                <p data-lang-en="This hand contains five cards of sequential rank in at least two different suits."
+                                    data-lang-pt="Esta mão contém cinco cartas de valores sequenciais em pelo menos dois naipes diferentes.">
+                                    This hand contains five cards of sequential rank in at least two different suits.
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/queen_of_spades.png" alt="Queen of Spades">
+                                <img src="static/images/jack_of_diamonds.png" alt="Jack of Diamonds">
+                                <img src="static/images/10_of_spades.png" alt="10 of Spades">
+                                <img src="static/images/9_of_clubs.png" alt="9 of Clubs">
+                                <img src="static/images/8_of_hearts.png" alt="8 of Hearts">
+                            </div>
+                        </div>
+
+                        <!-- Three of a Kind -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Three of a Kind</h2>
+                                <p data-lang-en="This hand contains three cards of the same rank, plus two cards which are not of this rank nor the same as each other (kickers)."
+                                    data-lang-pt="Esta mão contém três cartas do mesmo valor, mais duas cartas que não são deste valor nem iguais entre si (kickers).">
+                                    This hand contains three cards of the same rank, plus two cards which are not of
+                                    this rank nor the same as each other (kickers).
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/queen_of_hearts.png" alt="Queen of Hearts">
+                                <img src="static/images/queen_of_diamonds.png" alt="Queen of Diamonds">
+                                <img src="static/images/queen_of_spades.png" alt="Queen of Spades">
+                                <img src="static/images/5_of_clubs.png" alt="5 of Clubs">
+                                <img src="static/images/9_of_clubs.png" alt="9 of Clubs">
+                            </div>
+                        </div>
+
+                        <!-- Two Pair -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>Two Pair</h2>
+                                <p data-lang-en="This hand contains two cards of one rank, plus two cards of another rank, plus one kicker."
+                                    data-lang-pt="Esta mão contém duas cartas de um valor, mais duas cartas de outro valor, mais um kicker.">
+                                    This hand contains two cards of one rank, plus two cards of another rank, plus one
+                                    kicker.
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/king_of_hearts.png" alt="King of Hearts">
+                                <img src="static/images/king_of_spades.png" alt="King of Spades">
+                                <img src="static/images/jack_of_clubs.png" alt="Jack of Clubs">
+                                <img src="static/images/jack_of_diamonds.png" alt="Jack of Diamonds">
+                                <img src="static/images/9_of_diamonds.png" alt="9 of Diamonds">
+                            </div>
+                        </div>
+
+                        <!-- One Pair -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>One Pair</h2>
+                                <p data-lang-en="This hand contains two cards of one rank, plus three cards which are not of this rank nor the same as each other (kickers)."
+                                    data-lang-pt="Esta mão contém duas cartas de um valor, mais três cartas que não são deste valor nem iguais entre si (kickers).">
+                                    This hand contains two cards of one rank, plus three cards which are not of this
+                                    rank nor the same as each other (kickers).
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/ace_of_clubs.png" alt="Ace of Clubs">
+                                <img src="static/images/ace_of_diamonds.png" alt="Ace of Diamonds">
+                                <img src="static/images/9_of_hearts.png" alt="9 of Hearts">
+                                <img src="static/images/6_of_spades.png" alt="6 of Spades">
+                                <img src="static/images/4_of_clubs.png" alt="4 of Clubs">
+                            </div>
+                        </div>
+
+                        <!-- High Card -->
+                        <div class="hand-ranking-item">
+                            <div class="hand-text">
+                                <h2>High Card</h2>
+                                <p data-lang-en="Made of any five cards not meeting any of the above requirements. The highest card determines the hand's value."
+                                    data-lang-pt="Composta por quaisquer cinco cartas que não atendam a nenhum dos requisitos acima. A carta mais alta determina o valor da mão.">
+                                    Made of any five cards not meeting any of the above requirements. The highest card
+                                    determines the hand's value.
+                                </p>
+                            </div>
+                            <div class="example-hand">
+                                <img src="static/images/ace_of_diamonds.png" alt="Ace of Diamonds">
+                                <img src="static/images/7_of_hearts.png" alt="7 of Hearts">
+                                <img src="static/images/5_of_spades.png" alt="5 of Spades">
+                                <img src="static/images/3_of_clubs.png" alt="3 of Clubs">
+                                <img src="static/images/2_of_spades.png" alt="2 of Spades">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- ===== FIM DA ESTRUTURA DE RANKING DE MÃOS ===== -->
+
+                    <h2>Game Flow</h2>
+                    <ol>
+                        <li><strong>Blinds:</strong> Two players post forced bets (Small Blind and Big Blind).</li>
+                        <li><strong>Preflop:</strong> Each player receives two private cards ("hole cards"). Betting
+                            round begins.</li>
+                        <li><strong>Flop:</strong> Three community cards are dealt face up. Another betting round
+                            occurs.</li>
+                        <li><strong>Turn:</strong> A fourth community card is dealt. Another betting round.</li>
+                        <li><strong>River:</strong> A fifth and final community card is dealt. Final betting round.</li>
+                        <li><strong>Showdown:</strong> If more than one player remains, hands are revealed. The player
+                            with the best five-card poker hand (using any combination of their two hole cards and the
+                            five community cards) wins the pot.</li>
+                    </ol>
+
+                    <h2>Player Actions</h2>
+                    <ul>
+                        <li><strong>Fold:</strong> Discard hand and forfeit any chance to win the current pot.</li>
+                        <li><strong>Check:</strong> Pass the action without betting (only possible if no bet has been
+                            made in the current round).</li>
+                        <li><strong>Bet:</strong> Make the first bet in a betting round.</li>
+                        <li><strong>Call:</strong> Match the amount of the current bet or raise.</li>
+                        <li><strong>Raise:</strong> Increase the amount of the current bet.</li>
+                    </ul>
+                    <p>The goal is to win chips by either having the best hand at showdown or by forcing all other
+                        players to fold.</p>
+                </div>
+
+                <!-- Seção em Português -->
+                <div class="rules-text lang-pt" style="display: none;"> <!-- Inicialmente oculto -->
+                    <h1>Classificação de Mãos e Regras do Poker</h1>
+                    <p>Princípios básicos do Texas Hold'em:</p>
+
+
+                    <h2>Fluxo do Jogo</h2>
+                    <ol>
+                        <li><strong>Blinds:</strong> Dois jogadores fazem apostas obrigatórias (Small Blind e Big
+                            Blind).</li>
+                        <li><strong>Preflop:</strong> Cada jogador recebe duas cartas privadas ("hole cards"). A rodada
+                            de apostas começa.</li>
+                        <li><strong>Flop:</strong> Três cartas comunitárias são viradas para cima. Outra rodada de
+                            apostas ocorre.</li>
+                        <li><strong>Turn:</strong> Uma quarta carta comunitária é virada. Outra rodada de apostas.</li>
+                        <li><strong>River:</strong> Uma quinta e última carta comunitária é virada. Última rodada de
+                            apostas.</li>
+                        <li><strong>Showdown:</strong> Se mais de um jogador permanecer, as mãos são reveladas. O
+                            jogador com a melhor mão de poker de cinco cartas (usando qualquer combinação de suas duas
+                            cartas privadas e as cinco cartas comunitárias) ganha o pote.</li>
+                    </ol>
+
+                    <h2>Ações do Jogador</h2>
+                    <ul>
+                        <li><strong>Fold (Desistir):</strong> Descartar a mão e perder qualquer chance de ganhar o pote
+                            atual.</li>
+                        <li><strong>Check (Passar):</strong> Passar a ação sem apostar (só é possível se nenhuma aposta
+                            foi feita na rodada atual).</li>
+                        <li><strong>Bet (Apostar):</strong> Fazer a primeira aposta em uma rodada de apostas.</li>
+                        <li><strong>Call (Pagar):</strong> Igualar o valor da aposta ou aumento atual.</li>
+                        <li><strong>Raise (Aumentar):</strong> Aumentar o valor da aposta atual.</li>
+                    </ul>
+                    <p>O objetivo é ganhar fichas, seja tendo a melhor mão no showdown ou forçando todos os outros
+                        jogadores a desistirem.</p>
+                </div>
+
+            </div> <!-- Fim #rules-content -->
+
+            <a href="index.html" class="back-link">Voltar ao Jogo / Back to Game</a>
+
+        </div> <!-- Fim .rules-card -->
+    </div> <!-- Fim .rules-container -->
+
+    <script src="/static/js/rules-script.js"></script> <!-- Link para o JS específico das regras -->
+</body>
+
+</html>
